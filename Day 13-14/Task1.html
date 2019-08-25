@@ -1,0 +1,91 @@
+<html lang="en">
+
+<head>
+    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/1.0.0/angular-material.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-animate.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-aria.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-messages.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angular_material/1.0.0/angular-material.min.js"></script>
+
+    <style>
+        .highlight{
+            /* border-radius: 10px; */
+            /* margin: -1px; */
+            /* border: 1px solid rgb(233, 58, 14); */
+            color: black !important;
+            font-weight: bold !important;
+            font: 20px !important;
+        }
+
+        body{
+            font: 18px !important;
+        }
+    </style>
+    <script language="javascript">
+        angular
+            .module('searchApp', ['ngMaterial'])
+            .controller('autoCompleteController', autoCompleteController);
+
+        function autoCompleteController() {
+            var self = this;
+            self.states = loadStates();
+            self.querySearch = querySearch;
+
+            function querySearch(query) {
+                var results = query ? self.states.filter(createFilterFor(query)) :
+                    self.states;
+                return results;
+            }
+
+            function loadStates() {
+                var allStates = 'Alabama, Alaska, Arizona, Arkansas, California, Colorado, Connecticut, Delaware,\
+                  Florida, Georgia, Hawaii, Idaho, Illinois, Indiana, Iowa, Kansas, Kentucky, Louisiana,\
+                  Maine, Maryland, Massachusetts, Michigan, Minnesota, Mississippi, Missouri, Montana,\
+                  Nebraska, Nevada, New Hampshire, New Jersey, New Mexico, New York, North Carolina,\
+                  North Dakota, Ohio, Oklahoma, Oregon, Pennsylvania, Rhode Island, South Carolina,\
+                  South Dakota, Tennessee, Texas, Utah, Vermont, Virginia, Washington, West Virginia,\
+                  Wisconsin, Wyoming';
+
+                return allStates.split(/, +/g).map(function (state) {
+                    return {
+                        value: state.toLowerCase(),
+                        display: state
+                    };
+                });
+            }
+
+            //filter function for search query
+            function createFilterFor(query) {
+                var lowercaseQuery = angular.lowercase(query);
+                return function filterFn(state) {
+                    return (state.value.indexOf(lowercaseQuery) === 0);
+                };
+            }
+        }
+    </script>
+</head>
+
+<body ng-app="searchApp" ng-cloak>
+    <div ng-controller="autoCompleteController as ctrl" layout="column" ng-cloak>
+        <md-content class="md-padding">
+            <form ng-submit="$event.preventDefault()">
+                <md-autocomplete md-no-cache="true" md-selected-item="ctrl.selectedItem"
+                    md-search-text-change="ctrl.searchTextChange(ctrl.searchText)" md-search-text="ctrl.searchText"
+                    md-selected-item-change="ctrl.selectedItemChange(item)"
+                    md-items="item in ctrl.querySearch(ctrl.searchText)" md-item-text="item.display" md-min-length="3"
+                    placeholder="Enter to search">
+
+                    <md-item-template>
+                        <span md-highlight-text="ctrl.searchText" md-highlight-flags="^i">{{item.display}}</span>
+                    </md-item-template>
+                    <md-not-found>
+                        No states matching "{{ctrl.searchText}}" were found.
+                    </md-not-found>
+                </md-autocomplete>
+            </form>
+        </md-content>
+    </div>
+</body>
+
+</html>
