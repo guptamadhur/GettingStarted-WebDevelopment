@@ -1,0 +1,60 @@
+<div class="col-sm-12 col-md-12">
+    <div>
+        <!-- ng-show="showDeleteButton" -->
+        <button class="btn btn-danger" ng-click="removeSelectedRows()">Delete Row</button>
+    </div>
+    <table class="table">
+        <thead>
+            <tr>
+                <th class="thTable"><input type="checkbox" ng-model="isAll" ng-click="selectAllRows()"></th>
+                <!-- ng-model="IsAllChecked" ng-change="checkUncheckAll()"> -->
+                <th>Customer Deatils</th>
+                <th>Phone Number</th>
+                <th>Country</th>
+                <th>Address</th>
+                <th>
+                    <div class="paginationCustom">
+                        <button ng-disabled="true" class="pageNumber">{{currentPage*pageSize+1}}-{{((currentPage*pageSize)+pageSize)>customers.length?customers.length:((currentPage*pageSize)+pageSize)}} of
+                            {{customers.length}}</button>
+                        <button class="leftButton" ng-disabled="currentPage == 0"
+                            ng-click="currentPage=currentPage-1">&lt;</button>
+                        <button class="rightButton" ng-disabled="currentPage >= customers.length/pageSize - 1"
+                            ng-click="currentPage=currentPage+1">&gt;</button>
+                    </div>
+                </th>
+            </tr>
+        </thead>
+        <tbody ng-hide="customers.length>0">
+            <tr ng-hide="customers.length>0">
+                <td ng-hide="customers.length>0"></td>
+                <td ng-hide="customers.length>0">No Rows</td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+        </tbody>
+        <tbody ng-show="customers.length>0">
+            <tr ng-repeat="(key, value) in customers | startFrom:currentPage*pageSize | limitTo:pageSize | orderBy:value.name track by $index"
+                ng-class="{'success' : value.selected}">
+                <td class="thTable">
+                    <input type="checkbox" ng-model="value.selected"
+                        ng-change="rowSelectedButtonToggle(value.selected)" />
+                    <!-- ng-model="value.selected" ng-change="checkUncheckHeader()" -->
+                </td>
+                <td>
+                    <b>
+                        {{value.name}}
+                    </b>
+                    </br>
+                    <small>{{value.email}}</small>
+                    <p ng-click=" editCustomer(value) ">#{{value.id}}</p>
+                </td>
+                <td>+91 {{value.mobileNumber}}</td>
+                <td>{{value.country}}</td>
+                <td colspan="2">{{value.address}}</td>
+            </tr>
+        </tbody>
+    </table>
+    <a href="#/home ">Back to Home</a>
+</div>

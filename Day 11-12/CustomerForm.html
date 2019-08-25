@@ -1,0 +1,108 @@
+<!-- Modal -->
+<div id="myModal" ng-controller="CustomerFormController">
+    <div class="modal-header">
+
+        <h4 class="modal-title">{{model.customer.type}} Customer</h4>
+
+        <div>
+            <button id="helpButton" class="btn btn-default" ng-click="helpButton()">
+                <i class="fa fa-question-circle"></i> Help
+            </button>
+            <button type="button" class="close" ng-click="$dismiss()">&times;</button>
+        </div>
+    </div>
+    <div>
+        <form name="customerForm" method="post" class="form" ng-submit="addCustomer(model.customer)" novalidate>
+            <div class="modal-body ">
+                <div class="box-body ">
+                    <div class="form-group">
+                        <label for="country">Country</label>
+                        <input type="text" class="form-control" id="country" name="country" placeholder="India "
+                            ng-required="true" ng-model="model.customer.country" ng-minlength="3" />
+                        <span class="spanColor help-block" ng-show="customerForm.country.$touched && customerForm.country.$invalid">Min 3 characters
+                            required.</span>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="mobileNumber">Mobile Number</label>
+                    <div class="input-group-prepend">
+                        <span class="input-group-text" ng-class="{red-border-class:(customerForm.mobileNumber.$touched && customerForm.mobileNumber.$invalid)">+91</span>
+                        <input type="number" class="form-control pull-right contactNo" id="mobileNumber"
+                            name="mobileNumber" placeholder="Enter mobile number" ng-required="true "
+                            ng-model="model.customer.mobileNumber " ng-minlength="10 " ng-maxlength="10" />
+                    </div>
+                    <span class="spanColor help-block" ng-show="customerForm.mobileNumber.$touched && customerForm.mobileNumber.$invalid">Should be
+                        exactly of length 10.</span>
+                </div>
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" class="form-control" id="name" name="name" placeholder="Enter name "
+                        ng-required="true " ng-model="model.customer.name " ng-minlength="3 " />
+                    <span class="spanColor help-block" ng-show="customerForm.name.$touched && customerForm.name.$invalid">Name is
+                        required.</span>
+                </div>
+                <div class="form-group">
+                    <label for="altNumber">Alternate Contact No.</label>
+                    <div class="input-group-prepend">
+                        <span class="input-group-text">+91</span>
+                        <input type="number" class="form-control pull-right contactNo" id="altNumber" name="altNumber"
+                            placeholder="Enter alternate number " ng-model="model.customer.alternatemobilenumber"
+                            ng-minlength="10" ng-maxlength="10" />
+                    </div>
+                    <span class="spanColor help-block" ng-show="customerForm.altNumber.$touched && customerForm.altNumber.$invalid">Should be exactly
+                        of length 10.</span>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" class="form-control" id="email" name="email" placeholder="Enter email Id"
+                        ng-model="model.customer.email" />
+                    <span class="spanColor help-block" ng-show="customerForm.email.$invalid">Enter a valid email.</span>
+                </div>
+                <div class="form-group">
+                    <label for="pan">Permanent Account Number (PAN)</label>
+                    <input type="text" class="form-control" id="pan" name="pan" placeholder="Enter PAN Number "
+                        ng-model="model.customer.pan" />
+                </div>
+                <div class="form-group">
+                    <label for="pincode">Pincode</label>
+                    <input type="number" class="form-control" id="pincode" name="pincode" placeholder="Enter Pincode "
+                        ng-required="true" ng-model="model.customer.pincode" ng-minlength="6" ng-maxlength="6" />
+                    <span class="spanColor help-block" ng-show="customerForm.pincode.$touched && customerForm.pincode.$invalid">
+                        Should be exactly of length 6.</span>
+                </div>
+                <div class="form-group">
+                    <label for="address">Address</label>
+                    <input type="text" class="form-control" id="address" name="address" placeholder="Enter Address"
+                        ng-required="true" ng-model="model.customer.address" />
+                    <span class="spanColor help-block" ng-show="customerForm.address.$touched && customerForm.address.$invalid">
+                        Address is required.</span>
+                </div>
+                <div class="form-group">
+                    <label for="area">Area</label>
+                    <input type="text" class="form-control" id="area" name="area" placeholder="Enter area"
+                        ng-model="model.customer.area" />
+                </div>
+                <div class="form-group">
+                    <label for="landmark">Landmark</label>
+                    <input type="text" class="form-control" id="landmark" name="landmark" placeholder="Enter landmark "
+                        ng-model="model.customer.landmark" />
+                </div>
+                <input type="hidden" ng-model="model.customer.id">
+            </div>
+            <div class="container-fluid">
+                <div id="formButton" class="row">
+                    <div class="col-md-6 ">
+                        <button type="submit" class="btn btn-default custom-button-width" ng-click="$dismiss()">
+                            Cancel
+                        </button>
+                    </div>
+                    <div class="col-md-6 text-right ">
+                        <button type="submit" class="btn btn-default custom-button-width"
+                            ng-disabled="customerForm.$invalid">Save
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>

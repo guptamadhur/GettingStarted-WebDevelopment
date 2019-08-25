@@ -1,0 +1,153 @@
+.button-container {
+    background-color: rgb(200, 225, 250);
+    padding: 15%;
+}
+
+img {
+    height: 75px;
+    width: 75px;
+}
+
+#myModal .modal-dialog {
+    overflow-y: initial !important
+}
+
+#myModal .modal-body {
+    height: 500px;
+    overflow-y: auto;
+}
+
+#formButton button {
+    border-radius: 20px;
+    width: 135px;
+    margin: 5px;
+    color: rgb(22, 165, 221);
+    border: 1px solid rgb(159, 167, 170);
+}
+
+.input-group-text {
+    background-color: white;
+    border-right-style: none;
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: 0px;
+}
+
+.contactNo {
+    border-left-style: none;
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: 0px;
+}
+
+#helpButton {
+    border: 1px solid rgb(22, 165, 221);
+    border-radius: 20px;
+    background-color: rgb(255, 255, 255);
+    text-align: center;
+    text-decoration: none;
+    font-size: 14px;
+    margin: 2px 2px;
+    width: 90px;
+    color: rgb(22, 165, 221);
+}
+
+#helpButton:hover {
+    background-color: rgb(22, 165, 221);
+    color: rgb(255, 255, 255);
+}
+
+#helpButton .fa-question-circle {
+    border: 1px solid rgb(22, 165, 221);
+    background-color: rgb(22, 165, 221);
+    color: rgb(255, 255, 255);
+    border-radius: 20px;
+}
+
+#helpButton:hover .fa-question-circle {
+    border: 1px solid rgb(255, 255, 255);
+    background-color: white;
+    color: rgb(22, 165, 221);
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+    margin: 10px;
+}
+
+th:not(:first-child),
+td:not(:first-child) {
+    width: 15%;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+    word-wrap: break-word;
+    word-break: break-all;
+}
+
+.thTable {
+    width: 1%;
+    padding-right: 0px !important;
+    padding-left: 0px !important;
+}
+
+tbody tr:hover {
+    background-color: #f5f5f5;
+}
+
+p {
+    color: rgb(22, 165, 221);
+    cursor: pointer;
+}
+
+.leftButton {
+    border: 1px solid rgb(184, 177, 177);
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+}
+
+.rightButton {
+    border: 1px solid rgb(184, 177, 177);
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+
+.rightButton:hover,
+.leftButton:hover {
+    background-color: rgb(27, 28, 29);
+    color: white;
+    border: 1px solid white;
+}
+
+.paginationCustom {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.paginationCustom .pageNumber {
+    border: none;
+}
+
+.paginationCustom button {
+    background-color: white;
+}
+
+.container-fluid {
+    padding: 15px;
+    border-top: 1px solid #e5e5e5;
+}
+
+input.ng-touched.ng-invalid {
+    border: 1px solid red;
+}
+
+.spanColor{
+    color: red;
+}
+.red-border-class{
+    border: 1px solid red;
+    border-right-style: none;
+}
+
+.spanColor-left{
+    border: 1px solid red;
+    border-left-style: none;
+}
