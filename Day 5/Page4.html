@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>History Example</title>
+</head>
+
+<body>
+    <h2>Page 4</h2>
+    <input id='goAmount' value='-2'><button onclick='go()'>Go</button>
+
+    <button onclick='pushState()'>Push State</button><br>
+    <button onclick='replaceState()'>Replace State</button><br>
+    <button onclick='history.back()'>Back</button><br>
+    <button onclick='history.forward()'>Forward</button><br>
+    </br>
+    <div>
+        history.state = <span id='historyState'></span>
+    </div>
+    <div>
+        history.length = <span id='historyLength'></span>
+    </div>
+    <div>
+        href = <span id='locationHref'></span>
+    </div>
+</body>
+<script>
+    function go() {
+        var amount = document.getElementById('goAmount').value;
+        history.go(amount);
+    }
+
+
+    function onStateChange() {
+        document.getElementById('historyState').textContent = history.state;
+        document.getElementById('historyLength').textContent = history.length;
+        document.getElementById('locationHref').textContent = location.href;
+    }
+    window.onpopstate = onStateChange;
+
+    onStateChange();
+
+    function pushState() {
+        var newState = (history.state || 0) + 1;
+        history.pushState(newState, 'Pushed: ' + newState, '/History?state=' + newState);
+        onStateChange();
+    };
+
+    var replaceState = function () {
+        var newState = (history.state || 0) + 1;
+        history.replaceState(newState, 'Replaced: ' + newState, '/History?state=' + newState);
+        onStateChange();
+    };
+</script>
+
+</html>

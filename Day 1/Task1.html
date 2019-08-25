@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Employee Input Form</title>
+	<style>
+	table, th,td{
+	width: 400px;
+  border: 1px solid black;
+  padding: 5px;
+}
+td{
+	width: 120px;
+}
+</style>
+</head>
+<body>
+<div align="center">
+<form action="">
+<table style="border-bottom: 0px;padding-bottom: 0px;">
+	<tr>
+		<td><label>First Name</label></td>
+		<td><input type="text" name="firstName"></br></td>
+    </tr>
+    <tr>
+		<td><label>Last Name</label></td>
+		<td><input type="text" name="lastName"></br></td>
+	</tr>
+	<tr>
+	<td>
+	<label>Gender</label></td>
+	<td>
+	<input type="radio" name="gender" value="male" checked> Male
+    <input type="radio" name="gender" value="female"> Female</br>
+    </td>
+    </tr>
+    <tr>
+    <td>
+    <label>Marital Status</label>
+    </td>
+    <td>
+	<input type="radio" name="maritalStatus" value="married" checked> Married
+    <input type="radio" name="maritalStatus" value="unmarried"> Unmarried</br>
+    </td>
+    </tr>
+    <tr>
+    <td>
+    <label>Name of Spouse</label>
+    </td>
+    <td>
+	<input type="text" name="nameSpouse"></br>
+	</td>
+	</tr>
+	<tr>
+    <td>
+	<label>Other Details</label>
+	</td>
+    <td>
+	<textarea name="otherDetails" rows="5" style="resize: none;width: 90%"></textarea></br>
+	</td>
+	</tr>
+    <tr>
+    <td colspan="2">
+    <input title="Click here to view" type="checkbox" name="termsAndCondition" value="yes" checked> I accept the <a href="https://www.google.com/">Terms and Conditions</a>
+</td>
+</tr>
+</table>
+<table style="border-top: 0px;padding-top: 0px;">
+<tr align="center">
+	<td width="200px">
+	<button type="reset" value="Reset">RESET</button>
+	</td>
+	<td>
+	<button type="submit" value="submit">SAVE</button>
+	</td>
+	</tr>
+    </table>
+    </div>
+</form>
+</body>
+</html>

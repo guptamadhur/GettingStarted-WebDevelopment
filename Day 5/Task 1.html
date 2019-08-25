@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>POPUP</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 50px;
+        }
+
+        button#open:hover {
+            transition: all ease-in-out 0.2s;
+        }
+
+        button {
+            cursor: pointer;
+        }
+    </style>
+</head>
+
+<body onunload="closeWindow()">
+    <div>
+        <button id="open" title="Popup is open" onclick="openWindow(400,200)">OPEN POPUP</button>
+        <button onclick=" closeWindow()"> CLOSE POPUP </button>
+    </div>
+</body>
+<script>
+    var popups = new Array();
+    var myWindow;
+
+    function openWindow(w, h) {
+        var left = (screen.width / 2) - (w / 2);
+        var top = (screen.height / 2) - (h / 2);
+        myWindow = window.open("", "", 'toolbar=no, location=no, directories=no, status=no, menubar=no, scrollbars=no, resizable=no, copyhistory=no, width=' + w + ', height=' + h + ', top=' + top + ', left=' + left);
+        
+        var bodyVal="<p style='font-weight:bold'>I am child window</p>";
+
+        myWindow.document.write(bodyVal);
+        myWindow.focus();
+
+        popups.push(myWindow);
+    }
+
+    function closeWindow() {
+        if (popups.length == 0) return;
+
+        for (i = 0; i < popups.length; i++) {
+            popups[i].close();
+        }
+    }
+</script>
+
+</html>

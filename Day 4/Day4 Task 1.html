@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Input Form</title>
+    <link rel="stylesheet" href="css/custom.css">
+    </link>
+</head>
+
+<body>
+    <div id="main-container">
+        <form class="form-container" name="detailForm" action="">
+            <div class="header">
+                <h2>Employee Input Form</h2>
+            </div>
+            <table class="table-container">
+                <tr>
+                    <td class="left-side">
+                        <label>Name<span class="required">*</span></label>
+                    </td>
+                    <td class="right-side">
+                        <div class="right-box">
+                            <input id="firstName" type="text" name="firstName" displayName="First Name" onchange="validateValue(this)">
+                            <span>First Name</span>
+
+                            <input id="lastName" type="text" name="lastName" displayName="Last Name" onchange="validateValue(this)">
+                            <span>Last Name</span>
+                        </div>
+                    </td>
+                </tr>
+            </table>
+
+            <div class="bottom-button footer">
+                <div>
+                </div>
+
+                <div>
+                    <button style="background-color: rgb(59, 59, 56)" class="button" id="submit" onclick="validateForm(event)">Display</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</body>
+<script src="JS/showData.js"></script>
+
+</html>

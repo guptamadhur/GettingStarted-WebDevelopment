@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>History Example</title>
+</head>
+
+<body>
+    <h2>Page 3</h2>
+    <input id='goAmount' value='-2'><button onclick='go()'>Go</button>
+    </br>
+    </br>
+    <!--<a href="Page4.html">Navigate to Page 4</a>-->
+</body>
+<script>
+    function go() {
+        var amount = document.getElementById('goAmount').value;
+        history.go(amount);
+    }
+</script>
+
+</html>

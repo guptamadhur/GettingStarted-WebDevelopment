@@ -1,0 +1,192 @@
+body {
+    background-image: url("../Image/busy_tech.jpg");
+    font-family: Georgia, serif;
+    font-size: 10px;
+}
+
+.header {
+    display: flex;
+    height: 100%;
+    background-color: white;
+    justify-content: flex-start;
+    padding-left: 20px;
+}
+
+.form-container {
+    background-color: #E6E2D9;
+    width: 30%;
+}
+
+.header,
+.form-container {
+    border-radius: 5px;
+}
+
+input,
+textarea,
+select {
+    border-radius: 2px;
+    background: transparent;
+    border: 1px solid gray;
+    margin: 1px;
+}
+
+.table-container {
+    padding: 5px;
+    width: 100%;
+}
+
+#main-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+span {
+    font-size: 9px;
+}
+
+p {
+    display:flex;
+    margin: 8px;
+    font-size: 11px;
+}
+
+.left-side {
+    display: block;
+    margin: 8px;
+    font-size: 10px;
+    font-weight: bold;
+}
+
+.right-side {
+    margin: 8px;
+    padding: 5px;
+}
+
+.right-box {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-size: 8px;
+    margin-right: 10px;
+}
+
+.genderBox {
+    margin: 4px;
+    padding: 5px;
+}
+
+.required {
+    padding: 1px;
+    color: red;
+    position: relative;
+    top: -3px;
+}
+
+input[type='radio'] {
+    cursor: pointer;
+    visibility: hidden;
+}
+input:focus{
+    outline-style: none;
+}
+
+input[type='radio']:checked:after {
+    width: 4px;
+    height: 4px;
+    top: 3px;
+    left: -1px;
+    background-color: #fdfdfd;
+    content: '';
+    display: block;
+    visibility: visible;
+    border: 4px solid rgb(0, 193, 252);
+}
+
+input[type='radio']:after {
+    width: 8px;
+    height: 8px;
+    border-radius: 15px;
+    position: relative;
+    top: 3px;
+    left: 0px;
+    background-color: #fdfdfd;
+    content: '';
+    display: block;
+    visibility: visible;
+    border: 1px solid rgb(129, 129, 129);
+}
+
+#termsAndCondition>input[type="checkbox"]:checked:after {
+    display: flex;
+    background: blue;
+    color: #FFF;
+    content: "\2713";
+    visibility: visible;
+    flex-wrap: wrap-reverse;
+    align-content: space-around;
+    justify-content: center;
+}
+
+input[type="checkbox"]:after {
+    width: inherit;
+    height: inherit;
+}
+
+input[type="checkbox"],
+select,
+option {
+    cursor: pointer;
+}
+
+.td {
+    width: 100%;
+}
+
+.bottom-button {
+    display: flex;
+    justify-content: space-around;
+}
+
+.button {
+    margin-top: 15px;
+    border: none;
+    color: white;
+    border-radius: 20px;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    font-size: 12px;
+    width: 130px;
+    height: 30px;
+}
+
+#error-span {
+    font-size: 10px;
+    justify-content: center;
+    color: red;
+    padding-top: 15px;
+    font-weight: bold;
+    display: none;
+}
+
+.footer {
+    padding: 5px;
+    background-color: white;
+}
+
+.footer.curve-border {
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+.error {
+    border: 1px red solid;
+}
+
+input#term{
+    margin-right: 6px;
+    padding: 0px;
+}

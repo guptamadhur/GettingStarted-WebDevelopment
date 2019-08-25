@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+  body{
+    background-color: #72bcd4;
+    font-family:arial;
+    font-size: 12px;
+    height: 100%;
+  }
+
+h2{
+  color:#72bcd4;
+}
+
+.flex-container {
+  background-color: #ffffff;
+  margin-top: 15px;
+  display: flex;
+  flex-direction: row;
+}
+
+.flex-container > div {
+  display: flex;
+  margin: 15px;
+  background-color: #ffffff;
+}
+
+.left-content{
+  display: flex;
+  flex: 1;
+  order:1;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+
+.right-content{
+  display: flex;
+  flex: 1;
+  order: -1;
+}
+
+@media only screen and (max-width: 800px) {
+  .flex-container {
+  display: flex;
+  flex-direction: column-reverse;
+}
+.left-content{
+  padding: 15px;
+  }
+  .right-content{
+    margin: 0px !important;
+  }
+}
+
+img {
+   width: 100%;
+   display: block;
+   text-align: center;
+   overflow: hidden;
+}
+
+.address-container{
+  border: 5px;
+  width: 100%; 
+  border: solid 2px transparent;
+  padding: 5px;
+  margin-left: -15px;
+  margin-right: -15px;
+}
+
+.address-container:hover{
+  border-radius: 8px;
+  border-color: #FC5185;
+}
+
+</style>
+</head>
+<body>
+<div class="flex-container">
+  <div class="right-content">
+    <img src="images/map.jpg">
+  </div>
+  
+  <div class="left-content">
+    <div class="address-container">
+    <h2>Address</h2>
+    <p>Palm Court Building M, New Link Road,Besides Infiniti Mall, Above D Mart, Besides Goregaon Sports Complex </p>
+    <p>Malad West, Mumbai - 400064</p>
+  </div>
+  <div class="address-container">
+    <h2>Email</h2>
+    <p>support@justdial.com</p>
+  </div>
+  <div class="address-container">
+    <h2>Call Us</h2>
+    <p>+91 544134354135</p>
+    <p>Mon-Sat-9:30 am to 6:30</p>
+  </div>
+  </div> 
+</div>
+</body>
+</html>

@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SMS Compose </title>
+    <style>
+        .main-container {
+            display: grid;
+            justify-content: space-around;
+            margin-top: 50px;
+            color: rgb(75, 72, 72);
+        }
+
+        div {
+            display: flex;
+            padding-top: 10px;
+        }
+
+        .smsCount {
+            margin-left: 40px;
+        }
+
+        textarea {
+            outline-style: none;
+            border: 2px solid rgb(134, 197, 236);
+            color: rgb(143, 138, 138);
+        }
+    </style>
+</head>
+
+<body>
+    <div class="main-container">
+        <label>Compose SMS Message:</label>
+        <div>
+            <textarea id="textInput" rows="6" cols="80" name="input" wrap="virtual" maxlength="480"
+                placeholder="Start typing here" tabindex="1"></textarea>
+
+        </div>
+        <div>
+            <div>
+                <label>Characters Left: <span id="characterCount">160</span></label>
+            </div>
+            <div class="smsCount">
+                <label>Sms Per Customer: <span id="smsCount">1</span></label>
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+    var MAXCOUNT = 160;
+    var currentLength = 0;
+    var pageCount = 1;
+    var warn;
+
+    function charactersCount(event) {
+        currentLength = event.value.length;
+        validateCharacters(currentLength);
+    }
+
+    const textarea = document.getElementById("textInput");
+
+    textarea.addEventListener("input", event => {
+        currentLength = event.currentTarget.value.length;
+        validateCharacters(currentLength);
+    });
+
+    function validateCharacters(currentLen) {
+        var warn;
+        if (currentLen < 160) {
+            pageCount = 1;
+            MAXCOUNT = 160;
+        }
+
+        if (currentLen > 160 && currentLen <= 320) {
+            pageCount = 2;
+            MAXCOUNT = 320;
+        }
+        if (currentLen > 320 && currentLen < 480) {
+            pageCount = 3;
+            MAXCOUNT = 480;
+        }
+        if (currentLen >= 480) {
+            MAXCOUNT = 480;
+            pageCount = 3;
+            warn = "Maximum limit reached";
+        }
+        setData(MAXCOUNT - currentLen, pageCount);
+
+        if (warn) {
+            alert(warn);
+        }
+    }
+
+    function setData(characterCount, pageCount) {
+        document.getElementById("characterCount").innerHTML = " " + characterCount;
+        document.getElementById("smsCount").innerHTML = " " + pageCount;
+    }
+</script>
+
+</html>

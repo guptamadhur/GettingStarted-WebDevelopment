@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Input Form</title>
+    <link rel="stylesheet" href="css/custom.css">
+    </link>
+</head>
+
+<body>
+    <div id="main-container">
+        <form class="form-container" name="detailForm" action="">
+            <div class="header">
+                <h2>Employee Input Form</h2>
+            </div>
+            <table class="table-container">
+                <tr>
+                    <td class="left-side">
+                        <label>Name<span class="required">*</span></label>
+                    </td>
+                    <td class="right-side">
+                        <div class="right-box">
+                            <input id="firstName" type="text" name="firstName" displayName="First Name" onchange="validateValue(this)">
+                            <span>First Name</span>
+
+                            <input id="middleName" type="text" name="middleName" displayName="Middle Name" onchange="validateValue(this)">
+                            <span>Middle Name</span>
+
+                            <input id="lastName" type="text" name="lastName" displayName="Last Name" onchange="validateValue(this)">
+                            <span>Last Name</span>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="left-side">
+                        <label>Gender<span class="required">*</span></label>
+                    </td>
+                    <td class="right-side">
+                        <div class="genderBox">
+                            <input type="radio" id="gender" name="gender" value="male" checked> Male</br>
+                            <input type="radio" id="gender" name="gender" value="female"> Female</br>
+                            <input type="radio" id="gender" name="gender" value="other"> Others</br>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="left-side">
+                        <label>Marital Status<span class="required">*</span></label>
+                    </td>
+                    <td class="right-side">
+                        <div class="right-box selectOptions">
+                            <select id="maritalStatus" class="selectOption" onchange="statusMarried(this.value)" onblur="validateValue(this)">
+								<option disabled selected value="na"></option>
+								<option value="single">Single</option>
+								<option value="married">Married</option>
+								<option value="unmarried">Unmarried</option>
+								<option value="divorced">Divorced</option>
+							</select>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="left-side">
+                        <label>Spouse's Name</label>
+                    </td>
+                    <td class="right-side">
+                        <div class="right-box">
+                            <input id="nameSpouse" type="text" name="nameSpouse" displayName="Spouse Name" onchange="validateValue(this)">
+                            <span>Name of Spouse</span>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="left-side">
+                        <label>Other Details</label>
+                    </td>
+                    <td class="right-side">
+                        <div class="right-box">
+                            <textarea name="otherDetails" rows="5" style="resize: none;"></textarea>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <p id="termsAndCondition"><input id="term" title="Click here to view" type="checkbox" name="termsAndCondition">I accept Terms and Conditions</p>
+                    </td>
+                </tr>
+            </table>
+
+            <div class="bottom-button footer">
+                <div>
+                    <button style="background-color: rgb(151, 147, 137)" class="button" type="reset" value="Reset" onclick="resetButton()">RESET</button>
+                </div>
+
+                <div>
+                    <button style="background-color: rgb(59, 59, 56)" class="button" id="submit" type="submit" value="submit" onclick="validateForm(event)">SAVE</button>
+                </div>
+            </div>
+            <div class="footer curve-border">
+                <span id="error-span">There are errors on the form. Please fix them before continuing.</span>
+            </div>
+        </form>
+    </div>
+</body>
+<script src="JS/dataValidation.js"></script>
+
+</html>
