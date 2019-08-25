@@ -1,0 +1,79 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <style>
+        .main-container {
+            min-height: 150px;
+            border: 1px solid black;
+            display: flex;
+            justify-content: space-around;
+            flex-flow: row wrap-reverse;
+        }
+        
+        .container {
+            display: flex;
+            justify-content: stretch;
+        }
+        
+        .container div {
+            width: 25%;
+            min-height: 200px;
+            border: 1px solid #41b6ec;
+        }
+        
+        div {
+            padding: 10px;
+        }
+        
+        span {
+            border: 1px solid blue;
+            background-color: lightskyblue;
+            padding: 2px;
+            margin: 2px;
+            width: 86px;
+            height: 35px;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>Game: Name Place Animal Thing</h2>
+    <div class="main-container">
+        <span id="drag1" draggable="true" ondragstart="drag(event)" value="name">Ram Krishna</span>
+        <span id="drag2" draggable="true" ondragstart="drag(event)" value="name">Jones</span>
+        <span id="drag3" draggable="true" ondragstart="drag(event)" value="name">Robert Woods</span>
+        <span id="drag4" draggable="true" ondragstart="drag(event)" value="name">Michael Schumacher</span>
+        <span id="drag5" draggable="true" ondragstart="drag(event)" value="place">London</span>
+        <span id="drag6" draggable="true" ondragstart="drag(event)" value="place">United States of America</span>
+        <span id="drag7" draggable="true" ondragstart="drag(event)" value="place">India</span>
+        <span id="drag8" draggable="true" ondragstart="drag(event)" value="place">Mumbai</span>
+        <span id="drag9" draggable="true" ondragstart="drag(event)" value="animal">Tiger</span>
+        <span id="drag10" draggable="true" ondragstart="drag(event)" value="animal">Leopard</span>
+        <span id="drag11" draggable="true" ondragstart="drag(event)" value="animal">Elephant</span>
+        <span id="drag12" draggable="true" ondragstart="drag(event)" value="animal">Rabbit</span>
+        <span id="drag13" draggable="true" ondragstart="drag(event)" value="thing">T-Shirt</span>
+        <span id="drag14" draggable="true" ondragstart="drag(event)" value="thing">Dinning Table</span>
+        <span id="drag15" draggable="true" ondragstart="drag(event)" value="thing">Study Desk</span>
+        <span id="drag16" draggable="true" ondragstart="drag(event)" value="thing">Automatic 4 Wheeler</span>
+        <br>
+    </div>
+    <div class="container">
+        <div id="name" ondrop="drop(event)" ondragover="allowDrop(event)">
+            <h3>Name</h3>
+        </div>
+        <div id="place" ondrop="drop(event)" ondragover="allowDrop(event)">
+            <h3>Place</h3>
+        </div>
+        <div id="animal" ondrop="drop(event)" ondragover="allowDrop(event)">
+            <h3>Animal</h3>
+        </div>
+        <div id="thing" ondrop="drop(event)" ondragover="allowDrop(event)">
+            <h3>Thing</h3>
+        </div>
+    </div>
+    <script src="JS/custom1.js"></script>
+</body>
+
+</html>

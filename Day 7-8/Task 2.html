@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Watch Timer</title>
+    <link rel="stylesheet" href="CSS/custom2.css">
+    </link>
+</head>
+
+<body>
+    <div class="main-container">
+        <button onclick="addWatch(event)">Add</button>
+    </div>
+    <div class="container">
+        <label></label>
+        <div class="watchDiv">
+            <img src="Image/stopwatch.jpg" />
+            <div class="clock">
+                <div class="seconds"></div>
+                <div class="center"></div>
+            </div>
+        </div>
+        <div class="buttonDiv">
+            <button class="startBtn" onclick="startClock(this)">Start</button>
+            <button class="stopBtn" onclick="stopClock(this)">Stop</button>
+        </div>
+    </div>
+</body>
+<script src="JS/custom2.js"></script>
+
+</html>

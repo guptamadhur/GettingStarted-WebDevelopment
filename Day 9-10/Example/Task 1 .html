@@ -1,0 +1,83 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Game: Name Place Animal Thing</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <style type="text/css">
+        body {
+            font-family: Arial;
+            font-size: 10pt;
+        }
+        
+        img {
+            height: 100px;
+            width: 100px;
+            margin: 2px;
+        }
+        
+        .draggable {
+            filter: alpha(opacity=60);
+            opacity: 0.6;
+        }
+        
+        .dropped {
+            position: static !important;
+        }
+        
+        #dvSource,
+        #dvDest {
+            border: 5px solid #ccc;
+            padding: 5px;
+            min-height: 100px;
+            width: 430px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="dvSource">
+        <img alt="" src="images/Chrysanthemum.jpg" />
+        <img alt="" src="images/Desert.jpg" />
+        <img alt="" src="images/Hydrangeas.jpg" />
+        <img alt="" src="images/Jellyfish.jpg" />
+        <img alt="" src="images/Koala.jpg" />
+        <img alt="" src="images/Lighthouse.jpg" />
+        <img alt="" src="images/Penguins.jpg" />
+        <img alt="" src="images/Tulips.jpg" />
+    </div>
+    <hr />
+    <div id="dvDest">
+        Drop here
+    </div>
+
+    <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+    <script src="http://code.jquery.com/ui/1.8.24/jquery-ui.min.js" type="text/javascript"></script>
+    <script type="text/javascript">
+        $(function() {
+            $("#dvSource img").draggable({
+                revert: "invalid",
+                refreshPositions: true,
+                drag: function(event, ui) {
+                    ui.helper.addClass("draggable");
+                },
+                stop: function(event, ui) {
+                    ui.helper.removeClass("draggable");
+                }
+            });
+            $("#dvDest").droppable({
+                drop: function(event, ui) {
+                    if ($("#dvDest img").length == 0) {
+                        $("#dvDest").html("");
+                    }
+                    ui.draggable.addClass("dropped");
+                    $("#dvDest").append(ui.draggable);
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>

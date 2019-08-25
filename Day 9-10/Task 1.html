@@ -1,0 +1,93 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Game</title>
+    <style>
+        .main-container {
+            border: 1px solid black;
+            display: flex;
+            justify-content: space-around;
+            flex-flow: row wrap-reverse;
+        }
+        
+        .container {
+            display: flex;
+            justify-content: stretch;
+        }
+        
+        .container div {
+            width: 25%;
+            min-height: 200px;
+            border: 1px solid #41b6ec;
+        }
+        
+        div {
+            padding: 10px;
+        }
+        
+        span {
+            border: 1px solid blue;
+            background-color: lightskyblue;
+            padding: 2px;
+            margin: 2px;
+            width: 86px;
+            height: 35px;
+        }
+        
+        #list2>div>span {
+            display: flex;
+            justify-content: space-evenly;
+            border: 1px solid rgb(17, 64, 95);
+            background-color: rgb(117, 238, 181);
+            padding: 2px;
+            margin: 2px;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>Game: Name Place Animal Thing</h2>
+    <div id="list1" class="main-container">
+        <span id="drag1" value="name">Ram Krishna</span>
+        <span id="drag2" value="name">Jones</span>
+        <span id="drag3" value="name">Robert Woods</span>
+        <span id="drag4" value="name">Michael Schumacher</span>
+        <span id="drag5" value="place">London</span>
+        <span id="drag6" value="place">United States of America</span>
+        <span id="drag7" value="place">India</span>
+        <span id="drag8" value="place">Mumbai</span>
+        <span id="drag9" value="animal">Tiger</span>
+        <span id="drag10" value="animal">Leopard</span>
+        <span id="drag11" value="animal">Elephant</span>
+        <span id="drag12" value="animal">Rabbit</span>
+        <span id="drag13" value="thing">T-Shirt</span>
+        <span id="drag14" value="thing">Dinning Table</span>
+        <span id="drag15" value="thing">Study Desk</span>
+        <span id="drag16" value="thing">Automatic 4 Wheeler</span>
+        <br>
+    </div>
+    <div id="list2" class="container">
+        <div id="name">
+            <h3>Name</h3>
+        </div>
+        <div id="place">
+            <h3>Place</h3>
+        </div>
+        <div id="animal">
+            <h3>Animal</h3>
+        </div>
+        <div id="thing">
+            <h3>Thing</h3>
+        </div>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <!-- Also include jQueryUI -->
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+    <script type="text/javascript" src="JS/customjs.js"></script>
+</body>
+
+</html>

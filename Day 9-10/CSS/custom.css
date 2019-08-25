@@ -90,7 +90,10 @@ input[type='radio'] {
     visibility: hidden;
 }
 
-input:focus {
+input:focus,
+button,
+select:focus,
+textarea:focus {
     outline-style: none;
 }
 
@@ -170,6 +173,10 @@ option {
     color: red;
     padding-top: 15px;
     font-weight: bold;
+}
+
+#error-div,
+#error-span {
     display: none;
 }
 
@@ -190,4 +197,120 @@ option {
 input#term {
     margin-right: 6px;
     padding: 0px;
+}
+
+#showTableButton {
+    background-color: rgb(59, 59, 56);
+}
+
+/*Table CSS*/
+
+table.comicGreen {
+    width: 800px;
+    border-collapse: collapse;
+    display: none;
+    table-layout: fixed;
+    border-spacing: 0;
+}
+
+table.comicGreen td {
+    border-bottom: 1px solid black;
+    border-left: 1px solid black;
+    border-right: 1px solid black;
+    padding: 3px 2px;
+}
+
+table.comicGreen td {
+    font-size: 15px;
+    padding: 6px;
+    word-wrap: break-word;
+    animation: fadeInAnimation ease 3s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+
+@keyframes fadeInAnimation {
+    0% {
+        opacity: 0.2;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
+table.comicGreen th {
+    font-size: 16px;
+    text-align: left;
+    border: 1px solid black;
+    padding: 8px;
+}
+
+table.comicGreen th:first-child {
+    border-left: none;
+}
+
+thead {
+    border: 1px solid black;
+    display: table;
+    width: 100%;
+}
+
+table.comicGreen th {
+    width: 25%;
+}
+
+tbody#tableBody::-webkit-scrollbar {
+    width: 0px;
+    background: transparent;
+    overflow: hidden;
+    display: none;
+}
+
+tbody#tableBody ::-webkit-scrollbar-corner {
+    background-color: transparent;
+}
+
+tbody#tableBody {
+    height: 80px;
+    overflow-x: hidden;
+    display: block;
+    width: 100%;
+    overflow: auto;
+}
+
+tbody#tableBody tr {
+    display: table;
+    width: 100%;
+    table-layout: fixed;
+}
+
+tbody#tableBody tr:first-child {
+    border: none;
+}
+
+table.comicGreen tr:nth-child(odd) {
+    background: #EAF1E1;
+}
+
+table.comicGreen tr:nth-child(even) {
+    background: #D8E5C1;
+}
+
+table.comicGreen> :nth-child(1)>tr:nth-of-type(1) {
+    background-color: #C6C19C;
+}
+#loadingText{
+    color: #FFF;
+    display: none;
+    justify-content: space-around;
+}
+#requestData{
+    color: black;
+    font-size: 14px;
+    padding: 2px;
+}
+
+#dataLoaded{
+    display: none;
 }

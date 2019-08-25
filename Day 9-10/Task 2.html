@@ -1,0 +1,113 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Employee Input Form</title>
+    <link rel="stylesheet" href="CSS/custom.css"></link>
+    <script type = "text/javascript" 
+         src = "https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js">
+      </script>
+</head>
+
+<body>
+    <div class="bottom-button">
+        <button id="requestData" type="button" class="button" onclick="loadData(this)">Request Data</button>
+    </div>
+    <div id="loadingText">
+        <h1>Loading Data.....</h1>
+    </div>
+    <div id="dataLoaded">
+        <div id="main-container">
+            <div class="form-container">
+                <form id="detailForm" name="detailForm" action="">
+                    <div class="header">
+                        <h2>Employee Input Form</h2>
+                    </div>
+                    <table class="table-container">
+                        <tr>
+                            <td class="left-side">
+                                <label>Name<span class="required">*</span></label>
+                            </td>
+                            <td class="right-side">
+                                <div class="right-box">
+                                    <input id="firstName" type="text" name="firstName" displayName="First Name">
+                                    <span>First Name</span>
+
+                                    <input id="lastName" type="text" name="lastName" displayName="Last Name">
+                                    <span>Last Name</span>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="left-side">
+                                <label>Gender<span class="required">*</span></label>
+                            </td>
+                            <td class="right-side">
+                                <div class="genderBox">
+                                    <input type="radio" id="mgender" name="gender" value="male" checked> Male</br>
+                                    <input type="radio" id="fgender" name="gender" value="female"> Female</br>
+                                    <input type="radio" id="ogender" name="gender" value="other"> Others</br>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="left-side">
+                                <label>Marital Status<span class="required">*</span></label>
+                            </td>
+                            <td class="right-side">
+                                <div class="right-box selectOptions">
+                                    <select id="maritalStatus" class="selectOption">
+                                        <option disabled value="na"></option>
+                                        <option value="single">Single</option>
+                                        <option value="married">Married</option>
+                                        <option value="unmarried">Unmarried</option>
+                                        <option value="divorced">Divorced</option>
+                                    </select>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="left-side">
+                                <label>Other Details</label>
+                            </td>
+                            <td class="right-side">
+                                <div class="right-box">
+                                    <textarea id="otherDetails" displayName="Other Deatils" name="otherDetails" rows="5"
+                                        style="resize: none;"></textarea>
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+                </form>
+                <div class="bottom-button footer">
+                    <button id="showTableButton" type="button" class="button" onclick="showHideTable()">Show
+                        Table</button>
+                </div>
+            </div>
+            <table class="comicGreen" id="dataTable" style="table-layout:fixed">
+                <thead>
+                    <tr>
+                        <th>
+                            <div>First Name</div>
+                        </th>
+                        <th>
+                            <div>Last Name</div>
+                        </th>
+                        <th>
+                            <div>Gender</div>
+                        </th>
+                        <th>
+                            <div>Other Details</div>
+                        </th>
+                    </tr>
+                </thead>
+                <tbody id="tableBody"></tbody>
+            </table>
+        </div>
+    </div>
+</body>
+<script src="JS/dataValidation.js"></script>
+
+</html>
